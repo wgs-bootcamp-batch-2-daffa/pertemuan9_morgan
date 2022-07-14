@@ -19,7 +19,7 @@ app.use(morgan('dev'))
 app.use(express.static('public'))
 // Logger
 app.use((req, res, next) => {
-    console.log('===========================================================');
+    console.log('<===========================================================>');
     console.log(Date(Date.now()));
     next()
 })
