@@ -16,18 +16,18 @@ app.get('/about', (req, res) => {
 })
 app.get('/contact', (req, res) => {
     const contact = [
-        {
-            name: 'daffa',
-            email: 'daffaraihan03@gmail.com'
-        },
-        {
-            name: 'jupri',
-            email: 'jupriraihan03@gmail.com'
-        },
-        {
-            name: 'ucup',
-            email: 'ucupraihan03@gmail.com'
-        },
+        // {
+        //     name: 'daffa',
+        //     email: 'daffaraihan03@gmail.com'
+        // },
+        // {
+        //     name: 'jupri',
+        //     email: 'jupriraihan03@gmail.com'
+        // },
+        // {
+        //     name: 'ucup',
+        //     email: 'ucupraihan03@gmail.com'
+        // },
     ]
     res.render('contact', { contact })
 })
