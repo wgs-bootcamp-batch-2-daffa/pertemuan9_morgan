@@ -26,18 +26,18 @@ app.get('/about', (req, res) => {
 app.get('/contact', (req, res) => {
     tittle = 'Contact Page'
     const contact = [
-        // {
-        //     name: 'daffa',
-        //     email: 'daffaraihan03@gmail.com'
-        // },
-        // {
-        //     name: 'jupri',
-        //     email: 'jupriraihan03@gmail.com'
-        // },
-        // {
-        //     name: 'ucup',
-        //     email: 'ucupraihan03@gmail.com'
-        // },
+        {
+            name: 'daffa',
+            email: 'daffaraihan03@gmail.com'
+        },
+        {
+            name: 'jupri',
+            email: 'jupriraihan03@gmail.com'
+        },
+        {
+            name: 'ucup',
+            email: 'ucupraihan03@gmail.com'
+        },
     ]
     res.render('contact', { tittle, contact })
 })
@@ -70,5 +70,5 @@ app.use('/', (req, res) => {
 })
 // Listen Server
 app.listen(port, () => {
-    console.log(`App listen on ${host}:${port}`);
+    console.log(`App is running at : ${host}:${port}`);
 })
