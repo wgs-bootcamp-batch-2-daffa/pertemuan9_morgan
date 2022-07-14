@@ -1,8 +1,12 @@
-<%- include('layouts/header') %>
+<!-- begin::Navigation -->
+<%- contentFor('navbar') %>
   <%- include('layouts/navbar') %>
-    <div class="container">
-      <h1>
-        <%= tittle %>
-      </h1>
-    </div>
-    <%- include('layouts/footer') %>
+    <!-- end::Navigation -->
+    <!-- begin::Root -->
+    <%- contentFor('root') %>
+      <div class="container">
+        <h1>
+          <%= tittle %>
+        </h1>
+      </div>
+      <!-- end::Root -->

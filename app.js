@@ -1,20 +1,28 @@
 const express = require('express')
-// const ejs = require('ejs')
 const app = express()
 const port = 3000
 const host = 'http://localhost'
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
+var expressLayouts = require('express-ejs-layouts');
 
+// Set ejs
 app.set('view engine', 'ejs');
+// Use express-ejs
+app.use(expressLayouts);
+// Set express-ejs
+app.set('layout', 'layouts/main');
+// Page Home
 app.get('/', (req, res) => {
     tittle = 'Home Page'
     res.render('index', { tittle })
 })
+// Page About
 app.get('/about', (req, res) => {
     tittle = 'About Page'
     res.render('about', { tittle })
 })
+// Page Contact
 app.get('/contact', (req, res) => {
     tittle = 'Contact Page'
     const contact = [
@@ -33,11 +41,13 @@ app.get('/contact', (req, res) => {
     ]
     res.render('contact', { tittle, contact })
 })
+// Page Drinks params
 app.get('/drinks/:minuman', (req, res) => {
     res.send(
         'Minuman = ' + req.params.minuman
     )
 })
+// Page Drinks Get Method
 app.get('/drinks', (req, res) => {
     res.send(
         'Minuman = ' + req.query.drink +
@@ -45,6 +55,7 @@ app.get('/drinks', (req, res) => {
         'Keterangan = ' + req.query.description
     )
 })
+// Page Drinks Post Method
 app.post('/drinks', urlencodedParser, (req, res) => {
     res.send(
         'Minuman = ' + req.body.drink +
@@ -52,10 +63,12 @@ app.post('/drinks', urlencodedParser, (req, res) => {
         'Keterangan = ' + req.body.description
     )
 })
+// Page Error
 app.use('/', (req, res) => {
     res.status(404)
     res.render('error')
 })
+// Listen Server
 app.listen(port, () => {
     console.log(`App listen on ${host}:${port}`);
 })
