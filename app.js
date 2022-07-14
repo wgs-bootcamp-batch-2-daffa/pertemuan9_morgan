@@ -5,6 +5,7 @@ const host = 'http://localhost'
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 var expressLayouts = require('express-ejs-layouts');
+var morgan = require('morgan')
 
 // Set ejs
 app.set('view engine', 'ejs');
@@ -12,8 +13,13 @@ app.set('view engine', 'ejs');
 app.use(expressLayouts);
 // Set express-ejs
 app.set('layout', 'layouts/main');
+// Use morgan
+app.use(morgan('dev'))
+// Use public folder
 app.use(express.static('public'))
+// Logger
 app.use((req, res, next) => {
+    console.log('===========================================================');
     console.log(Date(Date.now()));
     next()
 })
