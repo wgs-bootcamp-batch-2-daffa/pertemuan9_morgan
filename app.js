@@ -12,6 +12,11 @@ app.set('view engine', 'ejs');
 app.use(expressLayouts);
 // Set express-ejs
 app.set('layout', 'layouts/main');
+app.use(express.static('public'))
+app.use((req, res, next) => {
+    console.log(Date(Date.now()));
+    next()
+})
 // Page Home
 app.get('/', (req, res) => {
     tittle = 'Home Page'
@@ -19,8 +24,12 @@ app.get('/', (req, res) => {
 })
 // Page About
 app.get('/about', (req, res) => {
-    tittle = 'About Page'
-    res.render('about', { tittle })
+    data = {
+        tittle: 'About Page',
+        name: 'M. Daffa R. A.',
+        occupation: 'Founder Daffapedia'
+    }
+    res.render('about', { data })
 })
 // Page Contact
 app.get('/contact', (req, res) => {

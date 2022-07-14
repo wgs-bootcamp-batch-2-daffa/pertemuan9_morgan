@@ -1,73 +1,87 @@
-<!-- begin::Navigation -->
 <%- contentFor('navbar') %>
+  <!-- begin::Navbar -->
   <%- include('layouts/navbar') %>
-    <!-- end::Navigation -->
-    <!-- begin::Root -->
+    <!-- end::Navbar -->
     <%- contentFor('root') %>
-      <div class="container">
-        <h1>
-          <%= tittle %>
-        </h1>
-        <h4>Request params</h4>
-        <div class="list-group col-sm-2">
-          <a class="list-group-item list-group-item-action disabled">Minuman</a>
-          <a href="/drinks/kopi" class="list-group-item list-group-item-action">
-            Kopi
-          </a>
-          <a href="/drinks/teh" class="list-group-item list-group-item-action">
-            Teh
-          </a>
-          <a href="/drinks/susu" class="list-group-item list-group-item-action">
-            Susu
-          </a>
+      <!-- begin::Root -->
+      <div class="row mt-5">
+        <div id="tittle" class="row mb-5">
+          <h1>
+            <%= tittle %>
+          </h1>
         </div>
-        <br>
-        <h4>Request get</h4>
-        <form method="GET" action="/drinks">
-          <div class="mb-3 row">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Drink</label>
-            <div class="col-sm-10">
-              <select class="form-select-sm" aria-label="Default select example" name="drink">
-                <option selected>Choose Drink</option>
-                <option value="Kopi">Kopi</option>
-                <option value="Teh">Teh</option>
-                <option value="pepsi">Susu</option>
-              </select>
+        <div id="request-params" class="row mb-5">
+          <h4>Request params</h4>
+          <div class="row">
+            <div class="list-group col-sm-2">
+              <a class="list-group-item list-group-item-action disabled">Minuman</a>
+              <a href="/drinks/kopi" class="list-group-item list-group-item-action">
+                Kopi
+              </a>
+              <a href="/drinks/teh" class="list-group-item list-group-item-action">
+                Teh
+              </a>
+              <a href="/drinks/susu" class="list-group-item list-group-item-action">
+                Susu
+              </a>
             </div>
-            <div class="mb-3 row">
-              <label for="inputPassword" class="col-sm-2 col-form-label">Description</label>
-              <div class="col-sm-2">
-                <input class="form-control form-control-sm" type="text" placeholder="Panas/Dingin"
-                  aria-label=".form-control-sm example" name="description">
+          </div>
+        </div>
+        <div id="request-get" class="row mb-5">
+          <h4>Request get</h4>
+          <div class="row">
+            <form method="GET" action="/drinks">
+              <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Drink</label>
+                <div class="col-sm-10">
+                  <select class="form-select-sm" aria-label="Default select example" name="drink">
+                    <option selected>Choose Drink</option>
+                    <option value="Kopi">Kopi</option>
+                    <option value="Teh">Teh</option>
+                    <option value="pepsi">Susu</option>
+                  </select>
+                </div>
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">Description</label>
+                  <div class="col-sm-2">
+                    <input class="form-control form-control-sm" type="text" placeholder="Panas/Dingin"
+                      aria-label=".form-control-sm example" name="description">
+                  </div>
+                </div>
+                <div>
+                  <button type="submit" class="btn btn-success btn-sm col-sm-1">Confirm</button>
+                </div>
               </div>
-            </div>
-            <div>
-              <button type="submit" class="btn btn-success btn-sm col-sm-1">Confirm</button>
-            </div>
-        </form>
-        <br><br>
-        <h4>Request post</h4>
-        <form method="POST" action="/drinks">
-          <div class="mb-3 row">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Drink</label>
-            <div class="col-sm-10">
-              <select class="form-select-sm" aria-label="Default select example" name="drink">
-                <option selected>Choose Drink</option>
-                <option value="Kopi">Kopi</option>
-                <option value="Teh">Teh</option>
-                <option value="pepsi">Susu</option>
-              </select>
-            </div>
-            <div class="mb-3 row">
-              <label for="inputPassword" class="col-sm-2 col-form-label">Description</label>
-              <div class="col-sm-2">
-                <input class="form-control form-control-sm" type="text" placeholder="Panas/Dingin"
-                  aria-label=".form-control-sm example" name="description">
+            </form>
+          </div>
+        </div>
+        <div id="request-post" class="row mb-5">
+          <h4>Request post</h4>
+          <div class="row">
+            <form method="POST" action="/drinks">
+              <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Drink</label>
+                <div class="col-sm-10">
+                  <select class="form-select-sm" aria-label="Default select example" name="drink">
+                    <option selected>Choose Drink</option>
+                    <option value="Kopi">Kopi</option>
+                    <option value="Teh">Teh</option>
+                    <option value="pepsi">Susu</option>
+                  </select>
+                </div>
+                <div class="mb-3 row">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">Description</label>
+                  <div class="col-sm-2">
+                    <input class="form-control form-control-sm" type="text" placeholder="Panas/Dingin"
+                      aria-label=".form-control-sm example" name="description">
+                  </div>
+                </div>
+                <div>
+                  <button type="submit" class="btn btn-success btn-sm col-sm-1">Confirm</button>
+                </div>
               </div>
-            </div>
-            <div>
-              <button type="submit" class="btn btn-success btn-sm col-sm-1">Confirm</button>
-            </div>
-        </form>
+            </form>
+          </div>
+        </div>
       </div>
       <!-- end::Root -->

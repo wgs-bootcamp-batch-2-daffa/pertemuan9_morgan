@@ -1,14 +1,16 @@
-<!-- begin::Navigation -->
 <%- contentFor('navbar') %>
+  <!-- begin::Navbar -->
   <%- include('layouts/navbar') %>
-    <!-- end::Navigation -->
-    <!-- begin::Root -->
+    <!-- end::Navbar -->
     <%- contentFor('root') %>
-      <div class="container">
-        <h1>
-          <%= tittle %>
-        </h1>
-        <div class="container">
+      <!-- begin::Root -->
+      <div id="contact" class="row">
+        <div id="tittle" class="row my-5">
+          <h1>
+            <%= tittle %>
+          </h1>
+        </div>
+        <div id="table" class="row">
           <div class="col-4">
             <table class="table table-responsive table-hover">
               <thead>

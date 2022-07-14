@@ -1,12 +1,28 @@
-<!-- begin::Navigation -->
 <%- contentFor('navbar') %>
+  <!-- begin::Navigation -->
   <%- include('layouts/navbar') %>
     <!-- end::Navigation -->
-    <!-- begin::Root -->
     <%- contentFor('root') %>
-      <div class="container">
+      <!-- begin::Root -->
+      <div id="tittle" class="row my-5">
         <h1>
-          <%= tittle %>
+          <%= data.tittle %>
         </h1>
+      </div>
+      <div id="profile" class="row">
+        <div class="text-center">
+          <div class="card" style="width: 225px;">
+            <img src="assets/putin.jpg" style="width:200px;height:200px;margin:auto" class="rounded-circle"
+              alt="uraaa...">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= data.name %>
+              </h5>
+              <p class="card-text">
+                <%= data.occupation %>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- end::Root -->
