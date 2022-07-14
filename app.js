@@ -12,9 +12,11 @@ app.get('/', (req, res) => {
     res.render('index', { tittle })
 })
 app.get('/about', (req, res) => {
-    res.render('about')
+    tittle = 'About Page'
+    res.render('about', { tittle })
 })
 app.get('/contact', (req, res) => {
+    tittle = 'Contact Page'
     const contact = [
         // {
         //     name: 'daffa',
@@ -29,7 +31,7 @@ app.get('/contact', (req, res) => {
         //     email: 'ucupraihan03@gmail.com'
         // },
     ]
-    res.render('contact', { contact })
+    res.render('contact', { tittle, contact })
 })
 app.get('/drinks/:minuman', (req, res) => {
     res.send(
